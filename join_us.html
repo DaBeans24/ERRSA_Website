@@ -575,13 +575,19 @@
     .then(res => res.json())
     .then(images => {
       const container = document.getElementById('gallery-images');
+      container.innerHTML = ''; // Clear in case of refresh
       images.forEach(img => {
         const image = document.createElement('img');
         image.src = img.url;
         image.alt = img.name;
+        image.style.height = '200px';
+        image.style.borderRadius = '1rem';
+        image.style.marginRight = '1rem';
+        image.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
         container.appendChild(image);
       });
-    });
+    })
+    .catch(err => console.error('Gallery load failed:', err));
 </script>
 
 
