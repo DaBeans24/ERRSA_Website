@@ -564,15 +564,16 @@
     </div>
   </div>
 
-  <!-- Photo Gallery -->
-<div id="gallery-images" style="display:flex; flex-wrap:wrap;">  
-  <h2>📸 Live ERRSA Moments</h2></div>
+<!-- Photo Gallery -->
+<h2>📸 Live ERRSA Moments</h2>
+<div id="gallery-images" style="display:flex; flex-wrap:wrap;"></div>
+
 <script>
-  fetch('https://script.google.com/macros/s/AKfycbwwR8pW8Z7mhVeNaxeMpgJHo6xFUN84cN3u7NDt3n-Yg60nyDOh13no7XMH6CIAMvvE6A/exec') // your deployment URL
+  fetch('https://script.google.com/macros/s/AKfycbwwR8pW8Z7mhVeNaxeMpgJHo6xFUN84cN3u7NDt3n-Yg60nyDOh13no7XMH6CIAMvvE6A/exec')
     .then(res => res.json())
     .then(images => {
       const container = document.getElementById('gallery-images');
-      container.innerHTML = '';
+      container.innerHTML = ''; // Now only clears the images
       images.forEach(img => {
         const image = document.createElement('img');
         image.src = img.url;
@@ -582,8 +583,8 @@
         image.style.borderRadius = '0.5rem';
         image.style.objectFit = 'cover';
         image.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-        image.referrerPolicy = 'no-referrer'; // Helps with Drive blocking
-        image.onerror = () => image.style.display = 'none'; // Hide broken
+        image.referrerPolicy = 'no-referrer';
+        image.onerror = () => image.style.display = 'none';
         container.appendChild(image);
       });
     })
@@ -592,6 +593,7 @@
       document.getElementById('gallery-images').innerText = 'Failed to load images.';
     });
 </script>
+
 
  
   <!-- Lightbox -->
