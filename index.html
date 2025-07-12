@@ -564,38 +564,33 @@
     </div>
   </div>
 
-<!-- Photo Gallery -->
-<h2>📸 Live ERRSA Moments</h2>
-<div id="gallery-images" style="display:flex; flex-wrap:wrap;"></div>
+  <!-- Photo Gallery -->
+ <div class="gallery" id="google-gallery">
+  <h2>📸 Live ERRSA Moments</h2>
+  <div class="gallery-scroll" id="gallery-images"></div>
+</div>
 
 <script>
-  fetch('https://script.google.com/macros/s/AKfycbwwR8pW8Z7mhVeNaxeMpgJHo6xFUN84cN3u7NDt3n-Yg60nyDOh13no7XMH6CIAMvvE6A/exec')
+  fetch('https://script.google.com/macros/s/AKfycbxZTMZG8khz59n4AsglvQ92LtIp2emoa_r8LX8fXSBD8BlDstJo1RNkMIIV_xZOBsxQnw/exec')
     .then(res => res.json())
     .then(images => {
       const container = document.getElementById('gallery-images');
-      container.innerHTML = ''; // Now only clears the images
+      container.innerHTML = ''; // Clear in case of refresh
       images.forEach(img => {
         const image = document.createElement('img');
         image.src = img.url;
         image.alt = img.name;
         image.style.height = '200px';
-        image.style.margin = '0.5rem';
-        image.style.borderRadius = '0.5rem';
-        image.style.objectFit = 'cover';
-        image.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-        image.referrerPolicy = 'no-referrer';
-        image.onerror = () => image.style.display = 'none';
+        image.style.borderRadius = '1rem';
+        image.style.marginRight = '1rem';
+        image.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
         container.appendChild(image);
       });
     })
-    .catch(err => {
-      console.error('Failed to load gallery:', err);
-      document.getElementById('gallery-images').innerText = 'Failed to load images.';
-    });
+    .catch(err => console.error('Gallery load failed:', err));
 </script>
 
 
- 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
