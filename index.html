@@ -19,260 +19,12 @@
       color: #1a2b4c;
     }
 
-    .slider-container {
-      max-width: 900px;
-      margin: 2rem auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .card {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 2rem;
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    p.intro-text {
       text-align: center;
-      position: relative;
-    }
-
-    .card h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: #204080;
-    }
-
-    .card .emoji {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .card ul {
-      text-align: left;
-      list-style: none;
-      padding: 0;
-    }
-
-    .card ul li::before {
-      content: "🌟";
-      margin-right: 0.5rem;
-    }
-
-    .card ul li {
-      padding: 0.4rem 0;
-      font-size: 1rem;
-    }
-
-    .buttons {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .buttons button {
-      background: #204080;
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      margin: 0 0.5rem;
-      transition: background 0.3s ease;
-    }
-
-    .buttons button:hover {
-      background: #10214d;
-    }
-
-    .join-btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.7rem 1.5rem;
-      background: #0078d4;
-      color: white;
-      font-size: 1.1rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .join-btn:hover {
-      background: #005fa3;
-    }
-
-    .gallery {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 1rem;
-    }
-
-    .gallery h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1a2b4c;
-    }
-
-    .gallery-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
-    }
-
-    .gallery-scroll img {
-      height: 200px;
-      border-radius: 1rem;
-      flex-shrink: 0;
-      scroll-snap-align: center;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .growth-path {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 1rem;
-    }
-
-    .growth-path h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1a2b4c;
-    }
-
-    .path-steps {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .path-steps::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: #0078d4;
-      transform: translateX(-50%);
-      z-index: -1;
-    }
-
-    .step {
-      background: white;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 80%;
-    }
-
-    .step h3 {
-      margin: 0.3rem 0;
-      color: #204080;
-    }
-#form {
-  scroll-margin-top: 80px; /* Adjust based on your header height */
-}
-    .step p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    @media (min-width: 768px) {
-      .path-steps {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .path-steps::before {
-        top: 50%;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        transform: translateY(-50%);
-      }
-
-      .step {
-        width: 22%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h1 class="section-title">💡 Get Involved with ERRSA</h1>
-
-  <!-- Role Slider -->
-  <div class="slider-container">
-    <div class="slider" id="slider">
-      <div class="card">
-        <div class="emoji">🎉</div>
-        <h2>General Member</h2>
-        <ul>
-          <li>Non-required meeting attendance</li>
-          <li>May volunteer to help with events</li>
-          <li>Bring up ideas & issues</li>
-          <li>Resume and skill building</li>
-        </ul>
-        <a href="#" class="join-btn">Join Now</a>
-      </div>
-      <div class="card">
-        <div class="emoji">🏠</div>
-        <h2>Hall Representative</h2>
-        <ul>
-          <li>Required general board meeting attendance</li>
-          <li>Attend major campus events</li>
-          <li>Submit monthly hall reports</li>
-          <li>Lead projects with supervision</li>
-        </ul>
-        <a href="#" class="join-btn">I'm Interested</a>
-      </div>
-      <div class="card">
-        <div class="emoji">🚀</div>
-        <h2>Executive Officer</h2>
-        <ul>
-          <li>Weekly exec meetings</li>
-          <li>Plan major projects & events</li>
-          <li>Office hours and leadership training</li>
-          <li>Potential housing perks!</li>
-        </ul>
-        <a href="#" class="join-btn">Take the Lead</a>
-      </div>
-    </div>
-    <div class="buttons">
-      <button onclick="prevSlide()">⬅️ Back</button>
-      <button onclick="nextSlide()">Next ➡️</button>
-    </div>
-  </div>
-
- 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ERRSA Get Involved</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    h1.section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-top: 2rem;
-      color: #1a2b4c;
+      max-width: 600px;
+      margin: 0.5rem auto 2rem;
+      font-size: 1.2rem;
+      color: #555;
     }
 
     .slider-container {
@@ -374,22 +126,23 @@
       color: #1a2b4c;
     }
 
-    .gallery-scroll {
+    #gallery-images {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
     }
 
-    .gallery-scroll img {
+    #gallery-images img {
       height: 200px;
-      border-radius: 1rem;
-      flex-shrink: 0;
-      scroll-snap-align: center;
+      border-radius: 0.5rem;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #gallery-images img:hover {
+      transform: scale(1.05);
     }
 
     .growth-path {
@@ -432,6 +185,13 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
       width: 80%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .step:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+      cursor: default;
     }
 
     .step h3 {
@@ -475,7 +235,14 @@
       margin-bottom: 1rem;
     }
 
-   
+    .form-encouragement {
+      text-align: center;
+      max-width: 600px;
+      margin: 1rem auto 0;
+      color: #555;
+      font-size: 1rem;
+    }
+
     .insta-section {
       max-width: 800px;
       margin: 3rem auto;
@@ -515,86 +282,68 @@
       font-size: 2rem;
       color: white;
       cursor: pointer;
+      user-select: none;
     }
   </style>
-
+</head>
+<body>
 
   <h1 class="section-title">💡 Get Involved with ERRSA</h1>
+  <p class="intro-text">
+    Join ERRSA to build leadership skills, connect with your community, and make an impact on campus!
+  </p>
 
   <!-- Slider Section -->
   <div class="slider-container">
-    <div class="slider" id="slider">
-      <div class="card">
-        <div class="emoji">🎉</div>
-        <h2>General Member</h2>
+    <div class="slider" id="slider" tabindex="0" aria-label="Role selection slider">
+      <div class="card" role="group" aria-labelledby="general-member-title">
+        <div class="emoji" aria-hidden="true">🎉</div>
+        <h2 id="general-member-title">General Member</h2>
         <ul>
           <li>Non-required meeting attendance</li>
           <li>May volunteer to help with events</li>
-          <li>Bring up ideas & issues</li>
+          <li>Bring up ideas &amp; issues</li>
           <li>Resume and skill building</li>
         </ul>
-        <a href="#form" class="join-btn">Join Now</a>
+        <a href="#form" class="join-btn" role="button" aria-label="Join as General Member">Join Now</a>
       </div>
-      <div class="card">
-        <div class="emoji">🏠</div>
-        <h2>Hall Representative</h2>
+      <div class="card" role="group" aria-labelledby="hall-rep-title">
+        <div class="emoji" aria-hidden="true">🏠</div>
+        <h2 id="hall-rep-title">Hall Representative</h2>
         <ul>
           <li>Required general board meeting attendance</li>
           <li>Attend major campus events</li>
           <li>Submit monthly hall reports</li>
           <li>Lead projects with supervision</li>
         </ul>
-        <a href="#form" class="join-btn">I'm Interested</a>
+        <a href="#form" class="join-btn" role="button" aria-label="Join as Hall Representative">I'm Interested</a>
       </div>
-      <div class="card">
-        <div class="emoji">🚀</div>
-        <h2>Executive Officer</h2>
+      <div class="card" role="group" aria-labelledby="exec-officer-title">
+        <div class="emoji" aria-hidden="true">🚀</div>
+        <h2 id="exec-officer-title">Executive Officer</h2>
         <ul>
           <li>Weekly exec meetings</li>
-          <li>Plan major projects & events</li>
+          <li>Plan major projects &amp; events</li>
           <li>Office hours and leadership training</li>
           <li>Potential housing perks!</li>
         </ul>
-        <a href="#form" class="join-btn">Take the Lead</a>
+        <a href="#form" class="join-btn" role="button" aria-label="Join as Executive Officer">Take the Lead</a>
       </div>
     </div>
     <div class="buttons">
-      <button onclick="prevSlide()">⬅️ Back</button>
-      <button onclick="nextSlide()">Next ➡️</button>
+      <button onclick="prevSlide()" aria-label="Previous Role">⬅️ Back</button>
+      <button onclick="nextSlide()" aria-label="Next Role">Next ➡️</button>
     </div>
   </div>
 
   <!-- Photo Gallery -->
- <div class="gallery" id="google-gallery">
   <h2>📸 Live ERRSA Moments</h2>
-  <div class="gallery-scroll" id="gallery-images"></div>
-</div>
-
-<script>
-  fetch('https://script.google.com/macros/s/AKfycbxZTMZG8khz59n4AsglvQ92LtIp2emoa_r8LX8fXSBD8BlDstJo1RNkMIIV_xZOBsxQnw/exec')
-    .then(res => res.json())
-    .then(images => {
-      const container = document.getElementById('gallery-images');
-      container.innerHTML = ''; // Clear in case of refresh
-      images.forEach(img => {
-        const image = document.createElement('img');
-        image.src = img.url;
-        image.alt = img.name;
-        image.style.height = '200px';
-        image.style.borderRadius = '1rem';
-        image.style.marginRight = '1rem';
-        image.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-        container.appendChild(image);
-      });
-    })
-    .catch(err => console.error('Gallery load failed:', err));
-</script>
-
+  <div id="gallery-images"></div>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img src="" id="lightbox-img" alt="Full View">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-img-alt">
+    <span class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</span>
+    <img src="" id="lightbox-img" alt="" />
   </div>
 
   <!-- Growth Path -->
@@ -619,7 +368,6 @@
       </div>
     </div>
   </div>
-
   <!-- Interest Form -->
   <div class="form-section" id="form">
   <h2>📬 Join ERRSA – Interest Form</h2>
